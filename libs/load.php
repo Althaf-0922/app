@@ -5,4 +5,14 @@ function load_template($name){
     include __DIR__."/../_templates/$name.php";
 }
 
+function validate_credentials($username, $password){
+    
+    if ($username == "althaf@gmail.com" && $password == "1234") {
+        return true;
+    } else {
+        return false;
+    }
+    
+    }
+
 ?>

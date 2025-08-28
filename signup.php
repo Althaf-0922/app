@@ -33,13 +33,30 @@ include 'libs/load.php';
         z-index: 2;
     }
 
-    .form-signin input[type="email"] {
+    .form-signin input[name="username"] {
         margin-bottom: -1px;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
+        
     }
 
-    .form-signin input[type="password"] {
+    .form-signin input[name="email"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    .form-signin input[name="phone"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    .form-signin input[name="password"] {
         margin-bottom: 10px;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
@@ -61,7 +78,7 @@ include 'libs/load.php';
     </header>
     <main>
         <?php 
-       load_template('_login');
+       load_template('_signup');
        ?>
     </main>
 
