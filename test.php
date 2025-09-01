@@ -1,23 +1,26 @@
 <pre>
     <?php
 
+        include "libs/load.php";
         //$cookie_name = "testscript";
         //$cookie_value = $_SERVER ['REQUEST_URI'];
         //setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
-        echo __LINE__;
-        print_r("_SERVER");
-        print_r($_SERVER);
-        print_r("_GET");
-        print_r($_GET);
-        print_r("_POST");
-        print_r($_POST);
-        print_r("_FILES");
-        print_r($_FILES);
-        print_r("_COOKIE");
-        print_r($_COOKIE);
+        // echo __LINE__;
+        // print_r("_SERVER");
+        // print_r($_SERVER);
+        // print_r("_GET");
+        // print_r($_GET);
+        // print_r("_POST");
+        // print_r($_POST);
+        // print_r("_FILES");
+        // print_r($_FILES);
+        // print_r("_COOKIE");
+        // print_r($_COOKIE);
 
-        echo __LINE__;
+        // echo __LINE__;
+
+        signup("alt-12", "123", "alt@gmail.com", "12233334");
 
     ?>
 
