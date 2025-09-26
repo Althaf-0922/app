@@ -23,6 +23,8 @@ $username = "althaf-0131";
 $password = "200326613204";
 $dbname = "althaf_newdb";
 
+mysqli_report(MYSQLI_REPORT_OFF);
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -38,19 +40,19 @@ else{
 $sql = "INSERT INTO `auth` (`id`, `user_name`, `password`, `email`, `phone`, `blocked`, `active`) 
 VALUES (NULL, '$Username', '$Password', '$email', '$phone', '0', '0')";
 
-$result = false;
+$error = false;
 
 if ($conn->query($sql) === TRUE) {
-  $result = true;
+  $error = false;
 
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-  $result = false;
+  // echo "Error: " . $sql . "<br>" . $conn->error;
+  $error = $conn->error;
 }
 
 $conn->close();
 
-return $result;
+return $error;
 
 }
 
