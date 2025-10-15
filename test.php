@@ -21,6 +21,8 @@
         // echo __LINE__;
 
         signup("alt-12", "123", "alt@gmail.com", "12233334");
+$conn = Database::getConnection();
+$conn = Database::getConnection();
 
     ?>
 

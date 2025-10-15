@@ -1,5 +1,9 @@
 <?php
 
+
+
+include_once("includes/database.class.php");
+include_once("includes/user.class.php");
 function load_template($name){
     //print("including $name.php");
     include __DIR__."/../_templates/$name.php";
@@ -16,44 +20,25 @@ function load_template($name){
 //     }
 
 
-function signup ($Username, $Password, $email, $phone){
+// function signup ($Username, $Password, $email, $phone){
+// $conn = Database::getConnection();
 
-$servername = "localhost";
-$username = "althaf-0131";
-$password = "200326613204";
-$dbname = "althaf_newdb";
+// $sql = "INSERT INTO `auth` (`id`, `user_name`, `password`, `email`, `phone`, `blocked`, `active`) 
+// VALUES (NULL, '$Username', '$Password', '$email', '$phone', '0', '0')";
 
-mysqli_report(MYSQLI_REPORT_OFF);
+// $error = false;
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
+// if ($conn->query($sql) === TRUE) {
+//   $error = false;
 
-if ($conn===false) {
-  die("Connection failed: ");
-}
+// } else {
+//   // echo "Error: " . $sql . "<br>" . $conn->error;
+//   $error = $conn->error;
+// }
 
-else{
-    echo "Connected successfully";
-}
+// $conn->close();
 
-$sql = "INSERT INTO `auth` (`id`, `user_name`, `password`, `email`, `phone`, `blocked`, `active`) 
-VALUES (NULL, '$Username', '$Password', '$email', '$phone', '0', '0')";
-
-$error = false;
-
-if ($conn->query($sql) === TRUE) {
-  $error = false;
-
-} else {
-  // echo "Error: " . $sql . "<br>" . $conn->error;
-  $error = $conn->error;
-}
-
-$conn->close();
-
-return $error;
-
-}
+// return $error;
+// }
 
 ?>

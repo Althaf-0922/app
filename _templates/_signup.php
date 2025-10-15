@@ -7,7 +7,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emai
         $password = $_POST['password'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $error = signup($username, $password, $email, $phone);
+        $error = User::signup($username, $password, $email, $phone);
         $signup = true;
 
 }
