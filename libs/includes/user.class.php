@@ -4,6 +4,8 @@ class User {
     private $conn;
     public static function signup ($Username, $Password, $email, $phone){
 
+$Password = md5(sha1(md5($Password)));     
+
 $conn = Database::getConnection();
 
 $sql = "INSERT INTO `auth` (`id`, `user_name`, `password`, `email`, `phone`, `blocked`, `active`) 
@@ -29,6 +31,28 @@ public function login ($Username){
     $this->conn ->query();
 
 }
+
+public static function authentication()
+{
+
+}
+public static function getBio()
+{
+
+}
+public static function setBio()
+{
+  
+}
+public static function getAvatar()
+{
+  
+}
+public static function setAvatar()
+{
+  
+}
+
 }
 
 
