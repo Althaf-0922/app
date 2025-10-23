@@ -1,12 +1,18 @@
-<html>
-    <head>
-        <title>Base64 Encoding and Decoding in PHP</title>
-    </head>
-    <body>
-        <?php
+<?php
 
-        $pass = isset($_GET['pass']) ? $_GET['pass'] : 'password123'; //ternary operator
-        echo(md5($pass));
-        ?>
-    </body>
-</html>
+        // $pass = isset($_GET['pass']) ? $_GET['pass'] : 'password123'; //ternary operator
+        // echo(md5($pass));
+
+
+$str = "password123";
+
+echo("Data Length: ". strlen($str) . "\n");
+$md5 = md5($str);
+$md5len = strlen($md5);
+
+$b64 = base64_encode($str);
+$b64len = strlen($b64);
+
+echo("MD5: $md5 (Length: $md5len)\n"); //Security through obscurity
+echo("Base64: $b64 (Length: $b64len)\n"); //Security through obscurity
+?>

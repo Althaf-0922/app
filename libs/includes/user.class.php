@@ -4,7 +4,7 @@ class User {
     private $conn;
     public static function signup ($Username, $Password, $email, $phone){
 
-$Password = md5(sha1(md5($Password)));     
+$Password = md5(strrev(md5($Password)));  //Security through obscurity   
 
 $conn = Database::getConnection();
 
