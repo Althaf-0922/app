@@ -26,7 +26,28 @@ $conn->close();
 return $error;
 }
 
-public function login ($Username){
+   public static function login ($Username, $Password) {
+    $Password = md5(strrev(md5($Password)));
+    $query = " SELECT * FROM `auth` WHERE `user_name` = 'testhash3'";
+    $conn = Database::getConnection();
+    $result = $conn->query($query);
+
+    if($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        print_r($row['password'] . "\n");
+        print($Password . "\n");
+        if($row['password'] === $Password) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+
+   }
+
+public function __construct($Username){
     $this->conn = Database::getConnection();
     $this->conn ->query();
 

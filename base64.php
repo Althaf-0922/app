@@ -4,7 +4,11 @@
         // echo(md5($pass));
 
 
-$str = "password123";
+$str = <<<EOL
+password12355454444444
+gfggggghhjjhkkjjkk
+ddrrtrtrtrtrytyty
+EOL;
 
 echo("Data Length: ". strlen($str) . "\n");
 $md5 = md5($str);
