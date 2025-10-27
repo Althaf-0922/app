@@ -34,8 +34,8 @@ return $error;
 
     if($result->num_rows == 1) {
         $row = $result->fetch_assoc();
-        print_r($row['password'] . "\n");
-        print($Password . "\n");
+        // print_r($row['password'] . "\n");
+        // print($Password . "\n");
         if($row['password'] === $Password) {
             return true;
         } else {

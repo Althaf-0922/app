@@ -22,7 +22,7 @@ class Database
             }
 
             else{
-                echo "Connected successfully..... Assigning new connection";
+                // echo "Connected successfully..... Assigning new connection";
                 Database::$conn = $connection;
                 return Database::$conn;
             }
