@@ -2,8 +2,8 @@
 
 include 'libs/load.php';
 
-$user = "testhash3";
-$pass = "marstech";
+$user = "suser1";
+$pass = "123";
 $result = null;
 
 if(isset($_GET['logout'])){
@@ -13,17 +13,17 @@ if(isset($_GET['logout'])){
 
 if(Session::get('is_loggedin')){
     $userdata = Session::get('session_user');
-    print("Welcome Back, $user");
+    print("Welcome Back, $userdata[user_name]\n");
     $result = $userdata;
 
 }else {
     print("No Session Found, trying to login now.");
     $result = User::login($user, $pass);
-    print_r($result);
+    // print_r($result);
 
 
 if ($result) {
-    echo("Login sucessful, $user \n");
+    echo "Login sucessful, $result[user_name]\n";
     Session::set('is_loggedin',true);
     Session::set('session_user', $result);
 } else {
